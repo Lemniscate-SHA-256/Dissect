@@ -1,0 +1,29 @@
+{
+  "name": "dissect-tool",
+  "version": "1.0.0",
+  "description": "A tool for visualizing algorithms step by step.",
+  "main": "src/app.ts",
+  "scripts": {
+    "start": "ts-node src/app.ts",
+    "build": "tsc",
+    "test": "jest"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.0.0"
+  },
+  "devDependencies": {
+    "jest": "^26.6.0",
+    "@types/jest": "^26.0.0",
+    "@types/node": "^14.0.0"
+  },
+  "keywords": [
+    "algorithm",
+    "visualization",
+    "dissect",
+    "tool"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
