@@ -13,7 +13,8 @@ Dissect scans your code to:
 - 📊 **Analyze complexity** (time/space Big-O notation)
 - 🎨 **Generate visualizations** (Netron-like flowcharts)
 
-![Demo Visualization](https://i.imgur.com/5ZzKQ8H.png)
+![flowchart](https://github.com/user-attachments/assets/310a4051-c8f9-4d20-bbbc-0916de4faa8a)
+
 
 ## Features
 - **Multi-Language Support**: Python, JavaScript, Java (more coming)
