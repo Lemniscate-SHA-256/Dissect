@@ -1,0 +1,4 @@
+Metadata-Version: 2.1
+Name: dissect
+Version: 0.2
+Requires-Dist: tree-sitter-languages>=1.5.0

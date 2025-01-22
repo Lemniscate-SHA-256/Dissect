@@ -1,0 +1,2 @@
+[console_scripts]
+dissect = dissect.cli:main
