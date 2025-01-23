@@ -1,4 +1,6 @@
 def detect_quicksort(node, code_bytes):
+
+
     code = code_bytes.decode('utf-8', errors='ignore')
     if node.type != "function_definition":
         return {"is_quicksort": False, "confidence": 0.0}
