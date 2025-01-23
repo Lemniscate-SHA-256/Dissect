@@ -1,17 +1,33 @@
 from tree_sitter import Language, Parser
+from tree_sitter_languages import get_language, get_parser
 import os
 
 class CodeParser:
     def __init__(self):
-        # Load parser from absolute path
-        current_dir = os.path.dirname(os.path.abspath(__file__))
-        so_path = os.path.join(current_dir, '..', 'build', 'python.so')
-        self.language = Language(so_path, 'python')
+        self.languages = {
+            'python': get_language('python'),
+            'javascript': get_language('javascript')
+        }
         self.parser = Parser()
-        self.parser.set_language(self.language)
     
-    def parse_file(self, file_path: str):
-        """Parse a file and return its AST"""
+    def parse_file(self, file_path: str, language: str = 'python'):
+        """Parse a file with specified language"""
         with open(file_path, "rb") as f:
             code = f.read()
-        return self.parser.parse(code)
+        return self.parse(code, language)
+    
+    def parse(self, code_bytes: bytes, language: str = 'python'):
+        """Parse raw code bytes with specified language"""
+        self.parser.set_language(self.languages[language])
+        return self.parser.parse(code_bytes)
+    
+    def parse_file_javascript(self, file_path: str, language: str = 'python'):
+        """Parse a file with specified language"""
+        with open(file_path, "rb") as f:
+            code = f.read()
+        return self.parse(code, language)
+    
+    def parse_javascript(self, code_bytes: bytes, language: str = 'python'):
+        """Parse raw code bytes with specified language"""
+        self.parser.set_language(self.languages[language])
+        return self.parser.parse(code_bytes)

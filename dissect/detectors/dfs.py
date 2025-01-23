@@ -10,6 +10,12 @@ def detect_dfs(node, code_bytes):
     recursive_calls = 0
     backtracking = 0
     
+    has_visited = "visited" in code or "seen" in code
+    has_neighbor_traversal = any(
+        keyword in code 
+        for keyword in ["neighbors", "children", "adjacent"]
+    )
+    
     for child in node.children:
         child_code = code[child.start_byte:child.end_byte]
         
@@ -26,12 +32,9 @@ def detect_dfs(node, code_bytes):
             backtracking += 1
     
     confidence = 0.0
-    if stack_usage or recursive_calls:
+    if (stack_usage or recursive_calls) and (has_visited or has_neighbor_traversal):
         confidence += 0.7
     if backtracking:
         confidence += 0.3
-    
-    return {
-        "is_dfs": confidence >= 0.7,
-        "confidence": confidence
-    }
+
+    return {"is_dfs": confidence >= 0.7, "confidence": confidence}

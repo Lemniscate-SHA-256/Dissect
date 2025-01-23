@@ -1,3 +1,4 @@
+README.md
 setup.py
 dissect/__init__.py
 dissect/cli.py
@@ -11,6 +12,7 @@ dissect.egg-info/requires.txt
 dissect.egg-info/top_level.txt
 dissect/detectors/__init__.py
 dissect/detectors/bfs.py
+dissect/detectors/binary_search.py
 dissect/detectors/dfs.py
 dissect/detectors/mergesort.py
 dissect/detectors/quicksort.py
@@ -18,6 +20,7 @@ tests/test.py
 tests/test_bfs.py
 tests/test_detectors.py
 tests/test_dfs.py
+tests/test_mergesort.py
 tests/test_parser.py
 tests/test_quicksort.py
 tests/test_quicksort_edge_cases.py

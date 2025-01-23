@@ -12,6 +12,8 @@ Dissect scans your code to:
 - 🔎 **Identify algorithms** (sorting, graph traversal, etc.)
 - 📊 **Analyze complexity** (time/space Big-O notation)
 - 🎨 **Generate visualizations** (Netron-like flowcharts)
+- **Category-Driven Visualization**  
+  Algorithms are color-coded by type (sorting=red, graph=blue)
 
 ![flowchart](https://github.com/user-attachments/assets/310a4051-c8f9-4d20-bbbc-0916de4faa8a)
 
