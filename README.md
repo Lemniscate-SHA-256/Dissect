@@ -53,6 +53,7 @@ dissect visualize --file ./src/graph.py --output architecture
 5. Open a Pull Request
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+https://discord.gg/ZJz3tT5r
 
 ## License
 Distributed under the MIT License. See `LICENSE` for more information.
