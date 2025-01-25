@@ -71,7 +71,14 @@ Confidence Aggregation
         - normalize_ast()
 (Done)
 
+25 01 25
 - Universal AST Normalizer integration for quicksort detector
+    - Function Declaration
+    - Function embedding in recursive call detection
+    - Function embedding in broad partition detection
+    - Function embedding in comprehension/array splitting detection
+    - Function embedding in divide-and-conquer detection
+(Done)
 
 - Complexity analysis add for quicksort detector
 
