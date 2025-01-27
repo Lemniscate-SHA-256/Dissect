@@ -19,6 +19,30 @@ def detect_quicksort(node, code_bytes):
     divide_and_conquer = 0
     list_operations = 0
     complexity = 0
+
+    # Quicksort-specific checks
+    def is_partition_loop(node, code_bytes):
+        loop_code = code_bytes[node['start']:node['end']].decode()
+        
+        # Look for pivot selection patterns
+        pivot_patterns = [
+            r'pivot\s*=',          # Explicit pivot variable
+            r'arr\[\s*0\s*\]',     # First element selection
+            r'arr\[\s*-\s*1\s*\]', # Last element selection
+            r'median_of_three'     # Common optimization
+        ]
+        
+        # Look for element swapping
+        swap_operations = [
+            'arr[i], arr[j] = arr[j], arr[i]',  # Python
+            '[arr[i], arr[j]] = [arr[j], arr[i]]',  # JS
+            'swap(arr, i, j)'  # Common helper
+        ]
+        
+        return (
+            any(re.search(p, loop_code) for p in pivot_patterns) and
+            any(s in loop_code for s in swap_operations)
+        )
     
     # Analyze function body with context-aware checks
     for child in normalized_ast['children']:
@@ -56,7 +80,51 @@ def detect_quicksort(node, code_bytes):
     
 
     # Complexity analysis
+    def estimate_complexity(node):
+        depth = 0
+        nested_loops = 0
+
+        # Traverse AST to find complexity factors
+        def traverse(n):
+            nonlocal depth, nested_loops
+            if n['type'] == 'loop_block':
+                nested_loops += 1
+                depth = max(depth, nested_loops)
+            for c in n['children']:
+                traverse(c)
+            if n['type'] == ['for_statement', 'while_statement']:
+                nested_loops -= 1
+        
+        traverse(node)
+
+        # Complexity determination
+        if depth == 1 and 'recursive' in node['operations']:
+            return 'O(n log n)' # Best Case
+        elif depth == 2:
+            return 'O(n^2)' # Worst Case
+        return 'unknown'
     
+
+
+    # Confidence Calculation
+    def calculate_confidence(partition, recursion, complexity):
+        weights = {
+            'partition': 0.5,
+            'recursion': 0.3,
+            'complexity': 0.2
+        }
+        
+        score = 0
+        if partition: score += weights['partition']
+        if recursion: score += weights['recursion']
+        
+        # Complexity bonus
+        if complexity == 'O(n log n)':
+            score += 0.2
+        elif complexity == 'O(n²)':
+            score += 0.1
+            
+        return min(score * 1.2, 1.0)  # Allow slight overconfidence
 
 
     # Final validation check

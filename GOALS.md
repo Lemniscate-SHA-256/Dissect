@@ -80,7 +80,22 @@ Confidence Aggregation
     - Function embedding in divide-and-conquer detection
 (Done)
 
+27 01 05
+- Add Quicksort Specific Checks
+    - Pivot Selection Patterns
+    - Element Swapping Patterns
+(Done)
+
 - Complexity analysis add for quicksort detector
+(Done)
+
+- Implementation of Confidence Calculation for robust detection
+(Done)
+
+-Add Test Cases for Quicksort
+(Done)
+
+- Test Quicksort
 
 - CI/CD Pipeline integration
     - Automatic algorithm complexity checks
