@@ -1,7 +1,7 @@
 # Dissect - Algorithm Detective 🔍
 
-[![CI/CD](https://github.com/yourusername/dissect/actions/workflows/ci.yml/badge.svg)](https://github.com/yourusername/dissect/actions)
-[![Coverage](https://codecov.io/gh/yourusername/dissect/branch/main/graph/badge.svg)](https://codecov.io/gh/yourusername/dissect)
+[![CI/CD](https://github.com/Lemniscate-SHA-256/dissect/actions/workflows/ci.yml/badge.svg)](https://github.com/Lemniscate-SHA-256/dissect/actions)
+[![Coverage](https://codecov.io/gh/Lemniscate-SHA-256/dissect/branch/main/graph/badge.svg)](https://codecov.io/gh/Lemniscate-SHA-256/dissect)
 
 **Automatically detect, analyze, and visualize algorithms in codebases**
 
