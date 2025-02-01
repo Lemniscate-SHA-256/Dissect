@@ -1,3 +1,5 @@
+import re
+
 def extract_identifier(node):
     if hasattr(node, 'name'):
         return node.name
@@ -129,6 +131,10 @@ def detect_operations(node):
     return operations
 
 def normalize_ast(node):
+    # Normalize AST node into a language-agnostic format
+    if not hasattr(node, 'type'):
+        return None
+    
     return {
         'type': NODE_TYPE_MAP.get(node.type, 'generic'),
         'name': extract_identifier(node),

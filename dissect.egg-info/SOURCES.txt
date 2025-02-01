@@ -1,6 +1,7 @@
 README.md
 setup.py
 dissect/__init__.py
+dissect/ast_normalizer.py
 dissect/cli.py
 dissect/parser.py
 dissect/viz.py

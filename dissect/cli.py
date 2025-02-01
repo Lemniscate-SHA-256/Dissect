@@ -51,6 +51,13 @@ def main():
     viz_parser.add_argument('--file', required=True)
     viz_parser.add_argument('--output', default="flowchart")
     viz_parser.set_defaults(func=visualize_command)
+
+    # Analyze command
+    analyze_parser = subparsers.add_parser('analyze')
+    analyze_parser.add_argument('--file', required=True)
+    analyze_parser.set_defaults(func=lambda args: print(f"Analyzing file: {args.file}"))  # Placeholder for actual analysis logic
+
+    # Parse command-line arguments and execute the corresponding function
     
     args = parser.parse_args()
     args.func(args)

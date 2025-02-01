@@ -1,5 +1,18 @@
-from ast_normalizer import normalize_ast
+import os
+import sys
+import re
 
+# Add source folder and subfolders paths to python absolute path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+try:
+    from ..ast_normalizer import normalize_ast
+except ImportError:
+    try:
+        from ast_normalizer import normalize_ast
+    except ImportError:
+        print("Error: ast_normalizer module not found. Please ensure it's in the correct location or installed.")
+        sys.exit(1)
 def detect_quicksort(node, code_bytes):
 
 

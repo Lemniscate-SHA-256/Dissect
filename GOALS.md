@@ -84,16 +84,17 @@ Confidence Aggregation
 - Add Quicksort Specific Checks
     - Pivot Selection Patterns
     - Element Swapping Patterns
-(Done)
-
 - Complexity analysis add for quicksort detector
 (Done)
-
 - Implementation of Confidence Calculation for robust detection
 (Done)
-
+=
 -Add Test Cases for Quicksort
 (Done)
+
+
+01 02 25
+- Added 
 
 - Test Quicksort
 
