@@ -88,7 +88,6 @@ Confidence Aggregation
 (Done)
 - Implementation of Confidence Calculation for robust detection
 (Done)
-=
 -Add Test Cases for Quicksort
 (Done)
 
@@ -99,9 +98,13 @@ Confidence Aggregation
 - Added Error Handling for the AST normalizer
 - What is re? (Answered)
 - Reading unittest documentation (5%)
+- First & Second Test Quicksort
+- Modifying and correcting #child.type to child['type'] in order to achieve a more accurate recursive call detection condition
+- The way we access normalized properties has been updated.
+- Proper string conversion for comparisons was added.
 (Done)
 
-- Test Quicksort
+
 
 - CI/CD Pipeline integration
     - Automatic algorithm complexity checks

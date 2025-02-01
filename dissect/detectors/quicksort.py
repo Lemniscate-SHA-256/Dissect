@@ -62,22 +62,22 @@ def detect_quicksort(node, code_bytes):
         
 
         # More precise recursive call detection
-        if child.type == "call_expression":
-            if f"{func_name}(" in normalize_ast.split('(')[0]:
+        if child['type'] == "call_expression":
+            if func_name in str(child['name']):
                 recursive_calls += 1
         
         # Broad partitioning pattern detection
         partition_keywords = ['pivot', 'partition', 'less', 'greater', 
                              'left', 'right', 'middle', 'low', 'high']
-        if any(kw in normalize_ast.lower() for kw in partition_keywords):
+        if any(kw in str(child).lower() for kw in partition_keywords):
             partitioning += 1
         
         # List comprehension/array splitting detection
-        if any(op in normalize_ast for op in ['[x for x', 'slice', 'split', '//2']):
+        if any(op in str(child) for op in ['[x for x', 'slice', 'split', '//2']):
             list_operations += 1
         
         # Enhanced divide-and-conquer detection
-        if 'return' in normalize_ast and ('+' in normalize_ast or 'extend(' in normalize_ast):
+        if 'return' in str(child) and ('+' in str(child) or 'extend(' in str(child)):
             divide_and_conquer += 1
     
     # Dynamic confidence calculation
