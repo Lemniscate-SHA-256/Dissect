@@ -99,6 +99,7 @@ Confidence Aggregation
 - Added Error Handling for the AST normalizer
 - What is re? (Answered)
 - Reading unittest documentation (5%)
+(Done)
 
 - Test Quicksort
 
