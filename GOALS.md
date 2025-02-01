@@ -94,7 +94,11 @@ Confidence Aggregation
 
 
 01 02 25
-- Added 
+- Units tests were added, and the quicksort test was updated to use unittests instead
+- Added "import re" Statements for quicksort.py & ast_normalizer.py
+- Added Error Handling for the AST normalizer
+- What is re? (Answered)
+- Reading unittest documentation (5%)
 
 - Test Quicksort
 
