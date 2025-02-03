@@ -14,6 +14,7 @@ jobs:
         run: |
           sudo apt-get install graphviz
           pip install -e .[dev]
+          pip install pytest
       - name: Run tests
         run: pytest tests/ -v --cov=dissect
       - name: Upload coverage
